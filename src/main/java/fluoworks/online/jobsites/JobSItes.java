@@ -1,4 +1,4 @@
-package com.example.employmanager.configuration.models;
+package fluoworks.online.jobsites;
 
 import java.util.Objects;
 

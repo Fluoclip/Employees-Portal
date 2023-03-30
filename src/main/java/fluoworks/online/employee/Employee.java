@@ -1,4 +1,4 @@
-package com.example.employmanager.configuration.models;
+package fluoworks.online.employee;
 
 import java.util.Objects;
 
@@ -10,6 +10,7 @@ public class Employee {
     private String Street;
     private String City;
     private Integer telefonNum;
+    private String email;
     private Integer bewacherId;
     private String lvlOfEducation;
 
@@ -22,6 +23,7 @@ public class Employee {
                 ", Street='" + Street + '\'' +
                 ", City='" + City + '\'' +
                 ", telefonNum=" + telefonNum +
+                ", email='" + email + '\'' +
                 ", bewacherId=" + bewacherId +
                 ", lvlOfEducation='" + lvlOfEducation + '\'' +
                 '}';
@@ -32,12 +34,12 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(ID, employee.ID) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(Street, employee.Street) && Objects.equals(City, employee.City) && Objects.equals(telefonNum, employee.telefonNum) && Objects.equals(bewacherId, employee.bewacherId) && Objects.equals(lvlOfEducation, employee.lvlOfEducation);
+        return Objects.equals(ID, employee.ID) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(Street, employee.Street) && Objects.equals(City, employee.City) && Objects.equals(telefonNum, employee.telefonNum) && Objects.equals(email, employee.email) && Objects.equals(bewacherId, employee.bewacherId) && Objects.equals(lvlOfEducation, employee.lvlOfEducation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ID, firstName, lastName, Street, City, telefonNum, bewacherId, lvlOfEducation);
+        return Objects.hash(ID, firstName, lastName, Street, City, telefonNum, email, bewacherId, lvlOfEducation);
     }
 
     public Integer getID() {
@@ -88,6 +90,14 @@ public class Employee {
         this.telefonNum = telefonNum;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public Integer getBewacherId() {
         return bewacherId;
     }
@@ -104,13 +114,14 @@ public class Employee {
         this.lvlOfEducation = lvlOfEducation;
     }
 
-    public Employee(Integer ID, String firstName, String lastName, String street, String city, Integer telefonNum, Integer bewacherId, String lvlOfEducation) {
+    public Employee(Integer ID, String firstName, String lastName, String street, String city, Integer telefonNum, String email, Integer bewacherId, String lvlOfEducation) {
         this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
         Street = street;
         City = city;
         this.telefonNum = telefonNum;
+        this.email = email;
         this.bewacherId = bewacherId;
         this.lvlOfEducation = lvlOfEducation;
     }
