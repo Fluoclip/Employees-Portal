@@ -1,8 +1,21 @@
 package fluoworks.online.employee;
 
+import jakarta.persistence.*;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import java.util.Objects;
 
+@Entity
 public class Employee {
+    @Id
+    @SequenceGenerator(
+            name = "employee_id_seqence",
+            sequenceName = "employee_id_seqence"
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "employee_id_seqence"
+    )
 
     private Integer ID;
     private String firstName;
@@ -13,6 +26,10 @@ public class Employee {
     private String email;
     private Integer bewacherId;
     private String lvlOfEducation;
+
+    public Employee() {
+
+    }
 
     @Override
     public String toString() {
