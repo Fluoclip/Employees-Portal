@@ -40,6 +40,7 @@ public class EmployeeController {
 
     }
 
+    @CrossOrigin
     @PostMapping
     public void addEmployee(@RequestBody NewEmployeeRequest request) {
         Employee employee = new Employee();
