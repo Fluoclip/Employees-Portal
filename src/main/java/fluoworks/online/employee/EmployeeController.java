@@ -14,9 +14,6 @@ public class EmployeeController {
     public EmployeeController(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
-//    Employee employee = new Employee(1, "Josip",
-//            "Andric", "Welfenstr. 10", "Augsburg",
-//            123450, "josip@gmail.com", 231414, "Sachkunde Prufung");
 
 
     @GetMapping
@@ -25,24 +22,11 @@ public class EmployeeController {
         return employeeRepository.findAll();
     }
 
-    record NewEmployeeRequest(
 
-            String firstName,
-            String lastName,
-            String street,
-            String city,
-            Integer telefon,
-            String email,
-            Integer bewacherId,
-            String lvlOfEducation
-
-    ) {
-
-    }
 
     @CrossOrigin
     @PostMapping
-    public void addEmployee(@RequestBody NewEmployeeRequest request) {
+    public void addEmployee(@RequestBody EmployeeRequest request) {
         Employee employee = new Employee();
 
         employee.setCity(request.city());
