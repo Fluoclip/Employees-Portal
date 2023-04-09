@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://192.168.178.76:5432/dbtest
+    url: jdbc:postgresql://192.168.178.76:5432/employees
     username: postgres
     password: pass
   jpa:
