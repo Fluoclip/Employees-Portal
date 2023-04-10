@@ -22,7 +22,7 @@ public class EmployeeController {
         return employeeRepository.findAll();
     }
 
-    // Ovdje treba returnat employee.addEmployee(request), a u Employee moram dodat tu metodu koja prima request kao argument
+    // Ovdje treba returnat employee.addEmployee(request), a u Employee moram dodat tu metodu koja prima request kao argument a tamo ide u EmployeeDAO
 
     @CrossOrigin
     @PostMapping
