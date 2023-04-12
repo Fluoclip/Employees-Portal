@@ -6,13 +6,25 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Objects;
 @Getter
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
+
 @Entity
 public class Employee {
+    public Employee(Integer id, String firstName, String lastName, String street, String city, Integer telefon, String email, Integer bewacherId, String lvlOfEducation) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        Street = street;
+        City = city;
+        this.telefon = telefon;
+        this.email = email;
+        this.bewacherId = bewacherId;
+        this.lvlOfEducation = lvlOfEducation;
+    }
+
     @Id
     @SequenceGenerator(
             name = "employee_id_sequence",
@@ -34,6 +46,23 @@ public class Employee {
     private Integer bewacherId;
     private String lvlOfEducation;
 
+
+    public void addEmployee(EmployeeRequest request) {
+
+        EmployeeDTO employeeDAO = new EmployeeDTO();
+
+        setCity(request.city());
+        setStreet(request.street());
+        setBewacherId(request.bewacherId());
+        setEmail(request.email());
+        setFirstName(request.firstName());
+        setLastName(request.lastName());
+        setLvlOfEducation(request.lvlOfEducation());
+        setTelefon(request.telefon());
+
+        employeeRepository.save(employeeDAO);
+
+    }
 
 
 }

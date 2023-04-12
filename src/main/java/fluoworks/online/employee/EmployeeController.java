@@ -17,28 +17,18 @@ public class EmployeeController {
 
 
     @GetMapping
-    public List<Employee> getEmployee() {
+    public List<EmployeeDTO> getEmployees() {
 
-        return employeeRepository.findAll();
+        return EmployeeService.getAll();
     }
 
     // Ovdje treba returnat employee.addEmployee(request), a u Employee moram dodat tu metodu koja prima request kao argument a tamo ide u EmployeeDAO
 
     @CrossOrigin
     @PostMapping
-    public void addEmployee(@RequestBody EmployeeRequest request) {
-        Employee employee = new Employee();
+    public addEmployee(@RequestBody EmployeeRequest request) {
 
-        employee.setCity(request.city());
-        employee.setStreet(request.street());
-        employee.setBewacherId(request.bewacherId());
-        employee.setEmail(request.email());
-        employee.setFirstName(request.firstName());
-        employee.setLastName(request.lastName());
-        employee.setLvlOfEducation(request.lvlOfEducation());
-        employee.setTelefon(request.telefon());
-
-        employeeRepository.save(employee);
+        return employee.addEmployee(request);
 
 
     }
