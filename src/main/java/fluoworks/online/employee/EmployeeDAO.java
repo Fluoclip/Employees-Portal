@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface EmployeeDAO {
 
-    List<Employee> selectAllCustomers();
+    List<Employee> selectAllEmployees();
 
     void insertEmployee(Employee employee);
 

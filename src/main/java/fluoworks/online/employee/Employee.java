@@ -13,7 +13,9 @@ import lombok.Setter;
 
 @Entity
 public class Employee {
-    public Employee(Integer id, String firstName, String lastName, String street, String city, Integer telefon, String email, Integer bewacherId, String lvlOfEducation) {
+    public Employee(Integer id, String firstName, String lastName,
+                    String street, String city, Integer telefon,
+                    String email, Integer bewacherId, String lvlOfEducation) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

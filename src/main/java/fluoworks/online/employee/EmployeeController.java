@@ -19,19 +19,19 @@ public class EmployeeController {
     @GetMapping
     public List<EmployeeDTO> getEmployees() {
 
-        return EmployeeService.getAll();
+        return EmployeeService.getAllEmployees();
     }
 
     // Ovdje treba returnat employee.addEmployee(request), a u Employee moram dodat tu metodu koja prima request kao argument a tamo ide u EmployeeDAO
 
-    @CrossOrigin
-    @PostMapping
-    public addEmployee(@RequestBody EmployeeRequest request) {
-
-        return employee.addEmployee(request);
-
-
-    }
+//    @CrossOrigin
+//    @PostMapping
+//    public addEmployee(@RequestBody EmployeeRequest request) {
+//
+//        return employee.addEmployee(request);
+//
+//
+//    }
 
 
 }
