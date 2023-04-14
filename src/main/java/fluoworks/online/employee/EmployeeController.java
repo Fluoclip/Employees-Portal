@@ -9,17 +9,19 @@ import java.util.List;
 @RequestMapping("api/employees")
 public class EmployeeController {
 
-    private final EmployeeRepository employeeRepository;
 
-    public EmployeeController(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
+    private final EmployeeService employeeService;
+
+    public EmployeeController(EmployeeService employeeService) {
+
+        this.employeeService = employeeService;
     }
 
 
     @GetMapping
     public List<EmployeeDTO> getEmployees() {
 
-        return EmployeeService.getAllEmployees();
+        return employeeService.getAllEmployees();
     }
 
     // Ovdje treba returnat employee.addEmployee(request), a u Employee moram dodat tu metodu koja prima request kao argument a tamo ide u EmployeeDAO

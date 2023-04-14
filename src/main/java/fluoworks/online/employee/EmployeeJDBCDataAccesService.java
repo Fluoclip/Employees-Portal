@@ -17,7 +17,7 @@ public class EmployeeJDBCDataAccesService implements EmployeeDAO {
     }
 
     @Override
-    public List<Employee> selectAllCustomers() {
+    public List<Employee> selectAllEmployees() {
         var sql = """
                 SELECT id, firstName, lastName, Street, City, telefon, bewacherId, lvlOfEducation
                 FROM employee
