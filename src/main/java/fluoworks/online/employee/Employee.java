@@ -49,22 +49,7 @@ public class Employee {
     private String lvlOfEducation;
 
 
-    public void addEmployee(EmployeeRequest request) {
 
-        EmployeeDTO employeeDAO = new EmployeeDTO();
-
-        setCity(request.city());
-        setStreet(request.street());
-        setBewacherId(request.bewacherId());
-        setEmail(request.email());
-        setFirstName(request.firstName());
-        setLastName(request.lastName());
-        setLvlOfEducation(request.lvlOfEducation());
-        setTelefon(request.telefon());
-
-        employeeRepository.save(employeeDAO);
-
-    }
 
 
 }

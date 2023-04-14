@@ -18,7 +18,7 @@ public class EmployeeService {
         this.employeeDTOMapper = employeeDTOMapper;
     }
 
-    public static List<EmployeeDTO> getAllEmployees() {
+    public  List<EmployeeDTO> getAllEmployees() {
         return employeeDAO.selectAllEmployees()
                 .stream()
                 .map(employeeDTOMapper)
