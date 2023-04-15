@@ -30,6 +30,7 @@ public class EmployeeController {
        @PostMapping
        public ResponseEntity<?> registerCustomer(
                @RequestBody EmployeeRegistrationRequest request) {
+
            employeeService.addEmployee(request);
 
            return ResponseEntity.ok()

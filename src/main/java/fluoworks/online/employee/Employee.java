@@ -26,6 +26,19 @@ public class Employee {
         this.bewacherId = bewacherId;
         this.lvlOfEducation = lvlOfEducation;
     }
+    public Employee( String firstName, String lastName,
+                     String street, String city, Integer telefon,
+                     String email, Integer bewacherId, String lvlOfEducation) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        Street = street;
+        City = city;
+        this.telefon = telefon;
+        this.email = email;
+        this.bewacherId = bewacherId;
+        this.lvlOfEducation = lvlOfEducation;
+    }
 
     @Id
     @SequenceGenerator(
@@ -37,6 +50,9 @@ public class Employee {
             strategy = GenerationType.SEQUENCE,
             generator = "employee_id_sequence"
     )
+
+
+
 
     private Integer id;
     private String firstName;

@@ -26,6 +26,22 @@ public class EmployeeService {
 
     }
 
-    public void addEmployee(EmployeeRegistrationRequest request) {
+    public void addEmployee(EmployeeRegistrationRequest employeeRegistrationRequest) {
+
+        Employee employee = new Employee(
+                employeeRegistrationRequest.firstName(),
+                employeeRegistrationRequest.lastName(),
+                employeeRegistrationRequest.Street(),
+                employeeRegistrationRequest.City(),
+                employeeRegistrationRequest.telefon(),
+                employeeRegistrationRequest.email(),
+                employeeRegistrationRequest.bewacherId(),
+                employeeRegistrationRequest.lvlOfEducation());
+
+
+
+        employeeDAO.insertEmployee(employee);
     }
+
 }
+
