@@ -1,5 +1,7 @@
 package fluoworks.online.employee;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,16 +26,16 @@ public class EmployeeController {
         return employeeService.getAllEmployees();
     }
 
-    // Ovdje treba returnat employee.addEmployee(request), a u Employee moram dodat tu metodu koja prima request kao argument a tamo ide u EmployeeDAO
+       @CrossOrigin
+       @PostMapping
+       public ResponseEntity<?> registerCustomer(
+               @RequestBody EmployeeRegistrationRequest request) {
+           employeeService.addEmployee(request);
 
-//    @CrossOrigin
-//    @PostMapping
-//    public addEmployee(@RequestBody EmployeeRequest request) {
-//
-//        return employee.addEmployee(request);
-//
-//
-//    }
+           return ResponseEntity.ok()
+                   .header(HttpHeaders.AUTHORIZATION)
+                   .build();
+       }
 
 
 }

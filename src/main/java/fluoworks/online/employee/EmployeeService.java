@@ -25,4 +25,7 @@ public class EmployeeService {
                 .collect(Collectors.toList());
 
     }
+
+    public void addEmployee(EmployeeRegistrationRequest request) {
+    }
 }
