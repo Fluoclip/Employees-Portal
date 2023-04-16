@@ -34,7 +34,7 @@ public class EmployeeController {
            employeeService.addEmployee(request);
 
            return ResponseEntity.ok()
-                   .header(HttpHeaders.AUTHORIZATION)
+
                    .build();
        }
 
