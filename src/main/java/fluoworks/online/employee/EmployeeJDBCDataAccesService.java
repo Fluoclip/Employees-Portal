@@ -21,7 +21,7 @@ public class EmployeeJDBCDataAccesService implements EmployeeDAO {
         var sql = """
                 SELECT id, firstName, lastName, Street, City, telefon, bewacherId, lvlOfEducation
                 FROM employee
-                LIMIT 1000
+                LIMIT 10
                 """;
 
         return jdbcTemplate.query(sql, employeeRowMapper);
@@ -30,6 +30,24 @@ public class EmployeeJDBCDataAccesService implements EmployeeDAO {
 
     @Override
     public void insertEmployee(Employee employee) {
+        var sql = """
+                INSERT INTO employee(firstName, lastName, Street, City, telefon, email, bewacherId, lvlOfEducation)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """;
+        int result = jdbcTemplate.update(
+                sql,
+
+                employee.getFirstName(),
+                employee.getLastName(),
+                employee.getStreet(),
+                employee.getCity(),
+                employee.getTelefon(),
+                employee.getEmail(),
+                employee.getBewacherId(),
+                employee.getLvlOfEducation()
+        );
+
+        System.out.println("insertEmployee result " + result);
 
     }
 

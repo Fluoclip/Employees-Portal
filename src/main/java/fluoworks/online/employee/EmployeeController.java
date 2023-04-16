@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//ALL REQESTS
+//ALL REQUESTS
 @RestController
 @RequestMapping("api/employees")
 public class EmployeeController {
@@ -26,7 +26,7 @@ public class EmployeeController {
         return employeeService.getAllEmployees();
     }
 
-       @CrossOrigin
+      // @CrossOrigin
        @PostMapping
        public ResponseEntity<?> registerCustomer(
                @RequestBody EmployeeRegistrationRequest request) {
