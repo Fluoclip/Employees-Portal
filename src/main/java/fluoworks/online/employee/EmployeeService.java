@@ -1,26 +1,22 @@
 package fluoworks.online.employee;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class EmployeeService {
 
-    private final EmployeeDAO employeeDAO;
-    private final EmployeeDTOMapper employeeDTOMapper;
+
     private final EmployeeRepository employeeRepository;
 
-    public EmployeeService(@Qualifier("jdbc") EmployeeDAO employeeDAO, EmployeeDTOMapper employeeDTOMapper, EmployeeRepository employeeRepository) {
-        
-        this.employeeDAO = employeeDAO;
-        this.employeeDTOMapper = employeeDTOMapper;
+    public EmployeeService(EmployeeRepository employeeRepository) {
+
+
         this.employeeRepository = employeeRepository;
     }
 
-    public  List<Employee> getAllEmployees() {
+    public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
 
     }
