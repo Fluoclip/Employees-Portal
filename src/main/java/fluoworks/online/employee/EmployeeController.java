@@ -21,21 +21,17 @@ public class EmployeeController {
 
 
     @GetMapping
-    public List<EmployeeDTO> getEmployees() {
+    public List<Employee> getEmployees() {
 
         return employeeService.getAllEmployees();
     }
 
       // @CrossOrigin
        @PostMapping
-       public ResponseEntity<?> registerCustomer(
-               @RequestBody EmployeeRegistrationRequest request) {
+       public void registerCustomer(@RequestBody EmployeeRegistrationRequest request) {
 
            employeeService.addEmployee(request);
 
-           return ResponseEntity.ok()
-
-                   .build();
        }
 
 
