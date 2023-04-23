@@ -27,8 +27,6 @@ public class EmployeeService {
 
                 employee.setFirstName(request.firstName());
                 employee.setLastName(request.lastName());
-                employee.setStreet(request.Street());
-                employee.setCity(request.City());
                 employee.setTelefon(request.telefon());
                 employee.setEmail(request.email());
                 employee.setBewacherId(request.bewacherId());
