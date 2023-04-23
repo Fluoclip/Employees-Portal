@@ -27,9 +27,6 @@ public class Employee {
 
     private String lastName;
 
-    private String Street;
-
-    private String City;
 
     private Integer telefon;
 
@@ -46,8 +43,6 @@ public class Employee {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        Street = street;
-        City = city;
         this.telefon = telefon;
         this.email = email;
         this.bewacherId = bewacherId;
@@ -60,8 +55,6 @@ public class Employee {
 
         this.firstName = firstName;
         this.lastName = lastName;
-        Street = street;
-        City = city;
         this.telefon = telefon;
         this.email = email;
         this.bewacherId = bewacherId;
@@ -96,21 +89,6 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public String getStreet() {
-        return Street;
-    }
-
-    public void setStreet(String street) {
-        Street = street;
-    }
-
-    public String getCity() {
-        return City;
-    }
-
-    public void setCity(String city) {
-        City = city;
-    }
 
     public Integer getTelefon() {
         return telefon;
@@ -150,8 +128,6 @@ public class Employee {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", Street='" + Street + '\'' +
-                ", City='" + City + '\'' +
                 ", telefon=" + telefon +
                 ", email='" + email + '\'' +
                 ", bewacherId=" + bewacherId +
@@ -164,12 +140,12 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(id, employee.id) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(Street, employee.Street) && Objects.equals(City, employee.City) && Objects.equals(telefon, employee.telefon) && Objects.equals(email, employee.email) && Objects.equals(bewacherId, employee.bewacherId) && Objects.equals(lvlOfEducation, employee.lvlOfEducation);
+        return Objects.equals(id, employee.id) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(telefon, employee.telefon) && Objects.equals(email, employee.email) && Objects.equals(bewacherId, employee.bewacherId) && Objects.equals(lvlOfEducation, employee.lvlOfEducation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, Street, City, telefon, email, bewacherId, lvlOfEducation);
+        return Objects.hash(id, firstName, lastName,  telefon, email, bewacherId, lvlOfEducation);
     }
 
 
