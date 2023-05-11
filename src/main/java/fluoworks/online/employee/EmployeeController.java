@@ -13,17 +13,17 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
 
+
     public EmployeeController(EmployeeService employeeService) {
 
         this.employeeService = employeeService;
+
 
     }
 
 
     @GetMapping
     public List<Employee> getEmployees() {
-
-
 
         return employeeService.getAllEmployees();
     }
@@ -35,10 +35,7 @@ public class EmployeeController {
            employeeService.addEmployee(request);
 
        }
-
-       public void createEmployees(){
-
-       }
+        
 
 
 }
