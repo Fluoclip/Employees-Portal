@@ -1,5 +1,10 @@
 package fluoworks.online.employee;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
 public class EmployeeRandomGenerator {
 
     private final EmployeeRepository employeeRepository;
@@ -7,6 +12,7 @@ public class EmployeeRandomGenerator {
     public EmployeeRandomGenerator(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
+
 
     public void addSpecificNumOfEmployees(int numOfEmp){
 

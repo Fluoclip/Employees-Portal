@@ -1,7 +1,5 @@
 package fluoworks.online.employee;
 
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,14 +12,18 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
+
     public EmployeeController(EmployeeService employeeService) {
 
         this.employeeService = employeeService;
+
     }
 
 
     @GetMapping
     public List<Employee> getEmployees() {
+
+
 
         return employeeService.getAllEmployees();
     }
@@ -31,6 +33,10 @@ public class EmployeeController {
        public void registerCustomer(@RequestBody EmployeeRegistrationRequest request) {
 
            employeeService.addEmployee(request);
+
+       }
+
+       public void createEmployees(){
 
        }
 
