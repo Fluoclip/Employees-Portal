@@ -1,5 +1,6 @@
 package fluoworks.online.employee;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,6 +13,7 @@ public class EmployeeRandomGenerator {
     }
 
 
+    @PostConstruct
     public void addSpecificNumOfEmployees(int numOfEmp){
 
         for( int i =0; i < numOfEmp; i++){
